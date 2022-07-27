@@ -22,7 +22,7 @@ let racket_X = 8
 let racket_Y = 170
 
 // Posição da Raquete do Oponente (x,y)
-let racketOpponent_X = 590
+let racketOpponent_X = 582
 let racketOpponent_Y = 170
 let velocityOpponent_Y;
 
