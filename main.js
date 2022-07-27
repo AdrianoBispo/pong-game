@@ -90,9 +90,11 @@ function collisionRacket(x, y) {
 }
 
 function MarkScore() {
-  fill(255)
-  text(myPoints, 278, 26);
-  text(opponentPoints, 321, 26);
+  textAlign(CENTER);
+  textSize(16);
+  fill(255);
+  text(myPoints, 150, 26);
+  text(opponentPoints, 450, 26);
 }
 
 function updatePoints() {
