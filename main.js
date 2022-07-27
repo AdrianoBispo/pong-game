@@ -10,6 +10,9 @@ let raio = diametro / 2;
 let velocity_X = 3; 
 let velocity_Y = 3;
 
+// variavél da colisão
+let hit = false;
+
 // Posição da Raquete (x,y)
 let racket_X = 8
 let racket_Y = 170
@@ -36,7 +39,8 @@ function draw() {
   Racket(racketOpponent_X, racketOpponent_Y);
   movimentRacket();
   movimentRacketOpponent();
-  collisionRacket();
+  collisionRacket(racket_X, racket_Y);
+  collisionRacket(racketOpponent_X, racketOpponent_Y);
 }
 
 function Ball() {
@@ -72,8 +76,10 @@ function movimentRacketOpponent() {
   velocityOpponent_Y = ball_Y - racketOpponent_Y - racket_Width / 2 - 30;
   racketOpponent_Y += velocityOpponent_Y;
 }
-function collisionRacket() {
-  if(ball_X - raio < racket_X + racket_Width && ball_Y - raio < racket_Y + racket_Height && ball_Y + raio > racket_Y) {
+function collisionRacket(x, y) {
+  hit = collideRectCircle(x, y, racket_Width, racket_Height, ball_X, ball_Y, raio);
+  if (hit) {
     velocity_X *= -1;
   }
 }
+
