@@ -17,7 +17,19 @@ let hit = false;
 let myPoints = 0;
 let opponentPoints = 0;
 
-// Posição da Raquete (x,y)
+// Sons do Jogo
+let racket;
+let points;
+let soundtrack;
+
+function preload() {
+  soundtrack = loadSound("");
+  points = loadSound("");
+  racket = loadSound("");
+
+}
+
+// Posição da Raquete do Jogador (x,y)
 let racket_X = 8
 let racket_Y = 170
 
