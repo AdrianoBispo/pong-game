@@ -13,6 +13,10 @@ let velocity_Y = 3;
 // variavél da colisão
 let hit = false;
 
+// Placar do Jogo
+let myPoints = 0;
+let opponentPoints = 0;
+
 // Posição da Raquete (x,y)
 let racket_X = 8
 let racket_Y = 170
@@ -41,6 +45,8 @@ function draw() {
   movimentRacketOpponent();
   collisionRacket(racket_X, racket_Y);
   collisionRacket(racketOpponent_X, racketOpponent_Y);
+  MarkScore();
+  updatePoints();
 }
 
 function Ball() {
@@ -83,3 +89,16 @@ function collisionRacket(x, y) {
   }
 }
 
+function MarkScore() {
+  fill(255)
+  text(myPoints, 278, 26);
+  text(opponentPoints, 321, 26);
+}
+
+function updatePoints() {
+  if (ball_X > 590) {
+    myPoints += 1;
+  }
+  if (ball_X < 10)
+    opponentPoints += 1;
+}
