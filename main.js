@@ -17,6 +17,7 @@ let racket_Y = 170
 // Posição da Raquete do Oponente (x,y)
 let racketOpponent_X = 590
 let racketOpponent_Y = 170
+let velocityOpponent_Y;
 
 // Tamanho da Raquete (Width x Height)
 let racket_Width = 10
@@ -34,6 +35,7 @@ function draw() {
   Racket(racket_X, racket_Y);
   Racket(racketOpponent_X, racketOpponent_Y);
   movimentRacket();
+  movimentRacketOpponent();
   collisionRacket();
 }
 
@@ -66,7 +68,10 @@ function movimentRacket() {
     racket_Y += 10;
   }
 }
-
+function movimentRacketOpponent() {
+  velocityOpponent_Y = ball_Y - racketOpponent_Y - racket_Width / 2 - 30;
+  racketOpponent_Y += velocityOpponent_Y;
+}
 function collisionRacket() {
   if(ball_X - raio < racket_X + racket_Width && ball_Y - raio < racket_Y + racket_Height && ball_Y + raio > racket_Y) {
     velocity_X *= -1;
