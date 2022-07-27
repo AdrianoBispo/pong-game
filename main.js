@@ -11,12 +11,12 @@ let velocity_X = 3;
 let velocity_Y = 3;
 
 // Posição da Raquete (x,y)
-let racket_X = 25
+let racket_X = 8
 let racket_Y = 170
 
 // Tamanho da Raquete (Width x Height)
-let racket_Width = 15
-let racket_Height = 70
+let racket_Width = 10
+let racket_Height = 85
   
 function setup() {
   createCanvas(600, 400);
