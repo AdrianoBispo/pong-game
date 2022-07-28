@@ -90,10 +90,23 @@ function movimentRacket() {
     racket_Y += 10;
   }
 }
-function movimentRacketOpponent() {
+/* Single Player
+  function movimentRacketOpponent() {
   velocityOpponent_Y = ball_Y - racketOpponent_Y - racket_Width / 2 - 30;
   racketOpponent_Y += velocityOpponent_Y;
+  }
+*/
+
+// Multiplayer
+function movimentRacketOpponent() {
+  if(keyIsDown(87)){
+    racketOpponent_Y -= 10;
+  }
+  if(keyIsDown(83)){
+    racketOpponent_Y += 10;
+  }
 }
+
 function collisionRacket(x, y) {
   hit = collideRectCircle(x, y, racket_Width, racket_Height, ball_X, ball_Y, raio);
   if (hit) {
