@@ -39,7 +39,6 @@ function preload() {
   soundtrack = loadSound("./Pong_Sounds/soundtrack.mp3");
   racket = loadSound("./Pong_Sounds/racket.mp3");
   points = loadSound("./Pong_Sounds/points.mp3");
-
 }
 
 function setup() {
@@ -118,9 +117,13 @@ function MarkScore() {
 }
 
 function updatePoints() {
-  if (ball_X > 590) {
+  if (ball_X > 593) {
     myPoints += 1;
+    points.play();
   }
-  if (ball_X < 10)
+  if (ball_X < 7) {
     opponentPoints += 1;
+    points.play();
+    }
+
 }
