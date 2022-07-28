@@ -17,18 +17,6 @@ let hit = false;
 let myPoints = 0;
 let opponentPoints = 0;
 
-// Sons do Jogo
-let racket;
-let points;
-let soundtrack;
-
-function preload() {
-  soundtrack = loadSound("");
-  points = loadSound("");
-  racket = loadSound("");
-
-}
-
 // Posição da Raquete do Jogador (x,y)
 let racket_X = 8
 let racket_Y = 170
@@ -41,9 +29,22 @@ let velocityOpponent_Y;
 // Tamanho da Raquete (Width x Height)
 let racket_Width = 10
 let racket_Height = 85
-  
+
+// Sons do Jogo
+let soundtrack;
+let racket;
+let points;
+
+function preload() {
+  soundtrack = loadSound("./Pong_Sounds/soundtrack.mp3");
+  racket = loadSound("./Pong_Sounds/racket.mp3");
+  points = loadSound("./Pong_Sounds/points.mp3");
+
+}
+
 function setup() {
   createCanvas(600, 400);
+  soundtrack.loop();
 }
 
 function draw() {
