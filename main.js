@@ -99,6 +99,7 @@ function collisionRacket(x, y) {
   hit = collideRectCircle(x, y, racket_Width, racket_Height, ball_X, ball_Y, raio);
   if (hit) {
     velocity_X *= -1;
+    racket.play();
   }
 }
 
